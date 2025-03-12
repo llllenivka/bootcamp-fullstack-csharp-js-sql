@@ -18,6 +18,10 @@
     color: darkblue;
 }
 
+h1, h2 {
+    font-style: italic;
+}
+
 img {
     width: 150px;
     height: 50px;
