@@ -1,0 +1,33 @@
+body {
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+.rectangle {
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to right, rgba(234, 95, 222, 1), rgb(65, 252, 118));
+    border-radius: 100%;
+}
+
+.rectangle, .circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease;
+}
+
+.circle:hover {
+    position: absolute;
+    transform: rotate(180deg) translate(50%, 50%);
+}
+
+.rectangle:hover {
+    box-shadow: 0 0 10px 10px rgb(67, 67, 255);
+}
