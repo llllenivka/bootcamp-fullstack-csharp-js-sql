@@ -1,0 +1,28 @@
+body {
+    background-color: #e9efff;
+}
+
+.header {
+    height: 50px;
+    background-color:#ffdd40;
+    margin: -8px;
+    padding: 10px;
+}
+
+.header-logo {
+    height: 100px;
+    display: inline;
+}
+
+.header-title {
+    color:#1c2e7a;
+    display: inline;
+    position: absolute;
+    font-size: 250%;
+    left: 3em;
+    top: 0.5em
+}
+
+
+
+
