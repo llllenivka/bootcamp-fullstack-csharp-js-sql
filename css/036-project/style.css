@@ -1,20 +1,12 @@
 html, body {
-    height: 100%;
+    height: auto;
     color: #043474;
     background: linear-gradient(#acc4d4, #148cd4) no-repeat;
     background-attachment: fixed;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
-    margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
-
-main {
-    flex: 1;
-    padding: 20px;
-}
 
 
 .header {
@@ -98,10 +90,7 @@ main {
     font-size: 80%;
 }
 
-footer {
-    background-color: #043474;
-    height: 100px;
-}
+
 
 
 
