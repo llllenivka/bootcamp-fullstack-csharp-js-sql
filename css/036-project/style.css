@@ -1,26 +1,60 @@
-body {
-    background-color: #e9efff;
+html {
+    height: 100%;
+    color: #042c84;
+    background: linear-gradient(#d1d6e4, #80dbed) no-repeat;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .header {
     height: 50px;
-    background-color:#ffdd40;
-    margin: -8px;
-    padding: 10px;
+    position: absolute;
 }
 
 .header-logo {
-    height: 100px;
+    height: 75%;
+    position: absolute;
     display: inline;
+    transition: all 0.3s ease;
+    margin: 0.5em 0em 0em 4em;
+}
+
+.header-logo:hover {
+    transform: rotate(-15deg);
 }
 
 .header-title {
-    color:#1c2e7a;
+    font-size: 104%;
     display: inline;
     position: absolute;
-    font-size: 250%;
-    left: 3em;
-    top: 0.5em
+    margin: 0.5em 0em 0em 7em;
+}
+
+.card-container {
+    padding-top: 5em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 48px;
+}
+
+.card {
+    max-width: 186px;
+    min-width: 144px;
+    height: 300px;
+    display: flex;
+    border: 1px solid #042c84;
+
+}
+
+.card img {
+    width: 80%;
+    height: 60%;
+}
+
+.card p {
+    color: #042c84;
+    text-align: center;
+    font-size: 100%;
 }
 
 
