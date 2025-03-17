@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap">
+    <title>Подписка на закрытый канал</title>
+    <style>
+        body {
+            height: 100vh; 
+            width: 100vw;
+
+            background-color: hsl(0, 0%, 100%);
+            color: #a53b9b;
+
+            font-family: 'Montserrat', sans-serif;
+            
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: center;             
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 250%;
+            min-width: 300px;
+            max-width: 500px;
+            height: 350px;
+            margin: 1%;
+
+            background-color: hsl(316, 100%, 83%);
+            border-radius: 25px;
+            box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.2);
+
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 1px 20px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            text-align: center;
+            margin: 70px 15px 50px;
+        }
+
+
+        .price {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        .button {
+            background-color: #a53b9b;
+            color: white;
+
+            font-weight: bold;
+            font-size: 15px;
+
+            width: 80%;
+            height: 15%;
+            border-radius: 15px;
+
+            margin: 5%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            color: #a53b9b;
+            background-color: white;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: -7%;
+        }
+
+        li {
+            margin: 10% -30%;
+
+            color: white;
+            font-size: medium;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                max-width: 300px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2>Базовая подписка</h2>
+        <ul>
+            <li>✔ Бонус 1</li>
+            <li>✗ Бонус 2</li>
+            <li>✗ Бонус 3</li>
+        </ul>
+        <div class="price">&#8381; 199/месяц</div>
+        <a href="#" class="button">Подписаться</a>
+    </div>
+
+    <div class="card">
+        <h2>Продвинутая подписка</h2>
+        <ul>
+            <li>✔ Бонус 1</li>
+            <li>✔ Бонус 2</li>
+            <li>✗ Бонус 3</li>
+        </ul>
+        <div class="price">&#8381; 299/месяц</div>
+        <a href="#" class="button">Подписаться</a>
+    </div>
+
+    <div class="card">
+        <h2>Премиум подписка</h2>
+        <ul>
+            <li>✔ Бонус 1</li>
+            <li>✔ Бонус 2</li>
+            <li>✔ Бонус 3</li>
+        </ul>
+        <div class="price">&#8381; 599/месяц</div>
+        <a href="#" class="button">Подписаться</a>
+    </div>
+
+</body>
+
+</html>
