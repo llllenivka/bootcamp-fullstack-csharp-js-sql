@@ -64,15 +64,68 @@
             border-radius: 30px;
         }
 
-        .display-1 {
-            color: #4c5bc0;
-            width: 30%;
+        .image-background {
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('./assets/img-01.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+
+            height: 120%;
+            
+        }
+        
+        .image-background h1 {
+            color:#fbf8f0;
+            font-size: 900%;
+        }
+        
+        .icon {
+            background-color: #efed98;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+            height: 10%;
+            width: 60%;
+            border-radius: 25px;
+            margin: 0 5%;
         }
 
         .text-about-me {
-            background-color: #efed98;
+            padding: 3%;
             color: #67b0da;
+
+            text-align: justify;
+            font-size: 125%;
         }
+
+        .my-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            margin: 5% 0%;
+        }
+
+        .card {
+            background-color: #4c5bc0;
+            color: #efed98;
+            height: 100%;
+        }
+
+        .btn {
+            background-color: #efed98;
+            color: #4c5bc0;
+            border: 0px;
+        }
+
+        .btn:hover {
+            background-color: #4c5bc0;
+            color: #efed98;
+        }
+  
+
 
 
 
@@ -121,24 +174,29 @@
         </div>
     </nav>
 
-    <div class="px-4 py-1 my-1 text-center">
-        <h1 class="display-1 fw-bold">Обо мне</h1>
 
-        <div class="col-lg-6 mx-auto text-about-me">
-            <p class="lead mb-4">
-                Привет! Я Джарвис, и я — виртуальный архитектор кода, путешествующий по просторам цифрового мира. С
-                самого детства меня увлекала технология и всё, что связано с компьютерами. Играясь с первыми программами
-                на стареньком компьютере своего отца, я почувствовал, что мое призвание — в мире программирования.
-            </p>
-            <img src="./assets/img-01.png" class="col-6 rounded" alt="">
-        </div>
-        
+    <div class="image-background">
+        <h1 class="fw-bold">Обо мне</h1>
     </div>
 
-    <!-- py-5 https://getbootstrap.com/docs/5.3/utilities/spacing/ -->
-    <!-- <div id="portfolio" class="py-5">
+    <div class="my-container">
+        
+        <div class="icon text-about-me">
+            Привет! Я Джарвис, и я — виртуальный архитектор кода, путешествующий по просторам цифрового мира. С
+            самого детства меня увлекала технология и всё, что связано с компьютерами. Играясь с первыми программами
+            на стареньком компьютере своего отца, я почувствовал, что мое призвание — в мире программирования.
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#4c5bc0" class="bi bi-emoji-laughing m-5" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="M12.331 9.5a1 1 0 0 1 0 1A5 5 0 0 1 8 13a5 5 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5M7 6.5c0 .828-.448 0-1 0s-1 .828-1 0S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 0-1 0s-1 .828-1 0S9.448 5 10 5s1 .672 1 1.5"/>
+        </svg>
+
+    </div>
+
+    <div id="portfolio">
         <div class="container">
-            <h2 class="display-4">Портфолио</h2>
+            <h2 class="display-4 fw-bold" style="color: #4c5bc0;">Портфолио</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
@@ -186,12 +244,12 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <!-- <div class="container">
+    <div class="container">
         <div class="row">
 
-            <div class="col-md-12">
+            <div class="col-md-12 px-4 py-4">
                 <div id="carouselExample" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -221,34 +279,34 @@
             </div>
 
         </div>
-    </div> -->
+    </div>
 
-    <!-- <div class="container">
+    <div class="my-container" style="background-color: #fbf8f0; color: #4c5bc0;">
         <div class="row">
             <div class="px-4 py-1 my-1 text-right">
                 <h1 class="display-1 fw-bold text-body">Контакты</h1>
                 <div class="col-md-12 mx-auto">
                     <p class="lead mb-4">
                     <ul>
-                        <li>E-mail: <a href="mailto:i@ksergey.ru">написать</a></li>
-                        <li>Сайт <a href="http://ksergey.ru">перейти</a></li>
+                        <li>E-mail: <a href="mailto:i@ksergey.ru" style="color: #aebbe5">написать</a></li>
+                        <li>Сайт <a href="http://ksergey.ru" style="color: #aebbe5">перейти</a></li>
                     </ul>
                     </p>
                 </div>
             </div>
 
         </div>
-    </div> -->
+    </div>
 
 
-    <!-- <div class="text-center py-4">
-        <div class="container">
-            <p>Все материалы, размещенные на этом сайте, предоставляются на условиях лицензии Creative Commons Zero
+    <div class="text-center py-4">
+        <div class="container" style="color: #4c5bc0;">
+            <p >Все материалы, размещенные на этом сайте, предоставляются на условиях лицензии Creative Commons Zero
                 (CC0), если не указано иное. <a
-                   href="https://creativecommons.org/publicdomain/zero/1.0/deed.ru">подробнее</a>.
+                   href="https://creativecommons.org/publicdomain/zero/1.0/deed.ru" style="color: #efed98">подробнее</a>.
             </p>
         </div>
-    </div> -->
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
