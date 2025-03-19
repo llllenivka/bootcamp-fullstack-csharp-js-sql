@@ -4,9 +4,9 @@ function toggleTheme() {
 
     if (theme === 'light') {
         document.documentElement.setAttribute('data-bs-theme', 'dark');
-        btn.innerHTML = `🌙`;
+        btn.innerHTML = `Темная тема`;
     } else {
         document.documentElement.setAttribute('data-bs-theme', 'light');
-        btn.innerHTML = `☀️`;
+        btn.innerHTML = `Светлая тема`;
     }
 }
