@@ -4,3 +4,5 @@ function btnClick()
     tb.value = `Привет ${tb.value}`;
 }
 
+const btn = document.getElementById("btn");
+btn.addEventListener("click", btnClick);
