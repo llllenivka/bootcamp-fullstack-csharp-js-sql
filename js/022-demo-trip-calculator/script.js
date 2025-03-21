@@ -13,13 +13,13 @@ calculateBtn.addEventListener("click", calculate);
 function calculate () {
     if (isNaN(invoiceAmount.Value) || isNaN(tipPercentage.Value) || isNaN(numberOfPeople.Value)) 
     {
-        const tip = parseFloat(invoiceAmount.value) / 100 * parseFloat(tipPercentage.value);
+       const tip = parseFloat(invoiceAmount.value) / 100 * parseFloat(tipPercentage.value);
         const totalAmount = parseFloat(invoiceAmount.value) + tip;
         const amountPerPerson = totalAmount / parseFloat(numberOfPeople.value);
 
         tipOutput.textContent = "Чаевые: " + tip.toFixed(2);
         totalAmountOutput.textContent = "Общая сумма: " + totalAmount.toFixed(2);
-        amountPerPersonOutput.textContent = "Сумма на человека: " + amountPerPerson.toFixed(2);
+        amountPerPersonOutput.textContent = "Сумма на человека: " + amountPerPerson.toFixed(2);``
     }
     else
     {
