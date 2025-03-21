@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculate</title>
+    <style>
+        html {
+            height: 100%;
+            width: 100%;
+            background-color: blanchedalmond;
+            color: rgb(90, 30, 0);
+        }
+
+        .input {
+            width: 50%;
+
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+
+            border: 2px solid;
+            border-radius: 15px;
+            padding: 10px;
+
+            background-color: rgb(249, 245, 234);
+        }
+
+        .input p {
+            font-weight: bold;
+        }
+
+        .input input {
+            height: 40%;
+            margin: 10%;
+            border-radius: 10px;
+        }
+
+        .btn {
+            background-color: rgb(90, 30, 0);
+            color: rgb(249, 245, 234);
+
+            border-radius: 10px;
+
+            height: 50px;
+            width: 100px;
+            margin: 20px 0px;
+        }
+
+        .output {
+            display: flex;
+            flex-direction: column;
+
+            background-color: rgb(249, 245, 234);
+            border: 2px solid;
+            border-radius: 15px;
+
+            padding: 10px;
+            
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Калькулятор чаевых</h1>
+    <div class="input">
+        <p>Сумма счета:</p>
+        <input id="invoiceAmountInput" type="number">
+        <p>Процент чаевых:</p>
+        <input id="tipPercentageInput" type="number">
+        <p>Количество человек:</p>
+        <input id="numberOfPeopleInput" type="number">
+    </div>
+
+    <button id="calculateBtn" class="btn">Рассчитать</button>
+
+    <h2><u>Результат:</u></h2>
+    <div class="output">
+        <p id="tipOutput">Чаевые:</p>
+        <p id="totalAmountOutput">Общая сумма:</p>
+        <p id="amountPerPersonOutput">Сумма на человека:</p>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
