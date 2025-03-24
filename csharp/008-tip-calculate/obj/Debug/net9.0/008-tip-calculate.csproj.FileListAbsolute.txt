@@ -1,0 +1,15 @@
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.AssemblyInfoInputs.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.AssemblyInfo.cs
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.csproj.CoreCompileInputs.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.sourcelink.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/bin/Debug/net9.0/008-tip-calculate
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/bin/Debug/net9.0/008-tip-calculate.deps.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/bin/Debug/net9.0/008-tip-calculate.runtimeconfig.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/bin/Debug/net9.0/008-tip-calculate.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/bin/Debug/net9.0/008-tip-calculate.pdb
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/refint/008-tip-calculate.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.pdb
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/008-tip-calculate.genruntimeconfig.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/008-tip-calculate/obj/Debug/net9.0/ref/008-tip-calculate.dll
