@@ -1,0 +1,15 @@
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.AssemblyInfoInputs.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.AssemblyInfo.cs
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.csproj.CoreCompileInputs.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.sourcelink.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/bin/Debug/net9.0/012-questionnaire
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/bin/Debug/net9.0/012-questionnaire.deps.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/bin/Debug/net9.0/012-questionnaire.runtimeconfig.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/bin/Debug/net9.0/012-questionnaire.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/bin/Debug/net9.0/012-questionnaire.pdb
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/refint/012-questionnaire.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.pdb
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/012-questionnaire.genruntimeconfig.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/012-questionnaire/obj/Debug/net9.0/ref/012-questionnaire.dll
