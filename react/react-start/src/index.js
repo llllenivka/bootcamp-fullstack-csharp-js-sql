@@ -8,13 +8,28 @@ import './index.css';
 // root.appendChild(h1Element);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const value = "Что-то есть";
+
+const firstname = "Аделина";
+const lastname = "Ш.";
+
+const item = ["Элемент1", "Элемент2", "Элемент3", "Элемент4" ,"Элемент5", "Элемент6"];
+
 root.render(
   <div>
-    <h1>Какой-то текст</h1>
+    <h1>{value}</h1>
+
+    <h1>{firstname + " " + lastname}</h1>
+
     <ul>
-      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-      <li>Nunc at enim ac nulla accumsan vulputate.</li>
-      <li>Suspendisse ultricies tellus convallis, varius mi sed, dignissim ligula.</li>
+      {
+        item.map(i => <li>{i}</li>)
+      }
     </ul>
+
+    <p>
+      &copy; Авторские права мои {new Date().getFullYear()}
+    </p>
   </div>
 );
