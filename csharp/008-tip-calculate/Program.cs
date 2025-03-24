@@ -1,16 +1,17 @@
 ﻿Console.Write("Введите сумму счета: ");
-double billAmount = double.Parse(Console.ReadLine());
+var result1 = double.TryParse(Console.ReadLine(), out double billAmount);
 Console.WriteLine();
 
 Console.Write("Введите процент чаевых: ");
-double tipPercentage = double.Parse(Console.ReadLine());
+var result2 = double.TryParse(Console.ReadLine(), out double tipPercentage);
 Console.WriteLine();
 
 Console.Write("Введите кол-во человек: ");
-int numberOfPeople = int.Parse(Console.ReadLine());
+var result3 = int.TryParse(Console.ReadLine(), out int numberOfPeople);
 Console.WriteLine();
 
-if(billAmount <= 0 || tipPercentage < 0 || numberOfPeople <= 0 )
+if( !result1 || !result2 || !result3 ||
+    billAmount <= 0 || tipPercentage < 0 || numberOfPeople <= 0 )
 {
     Console.WriteLine("Ошибка входных данных.");
 } 

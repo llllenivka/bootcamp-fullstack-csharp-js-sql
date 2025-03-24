@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("008-tip-calculate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b087aeb3cff1c0d6a3db6edd20d46799e1ff09d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e588edf18cf23b0850af724aa27f8426a060f7f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("008-tip-calculate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("008-tip-calculate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
