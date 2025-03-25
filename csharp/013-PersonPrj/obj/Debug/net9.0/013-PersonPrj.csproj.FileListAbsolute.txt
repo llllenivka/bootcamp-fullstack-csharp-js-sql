@@ -1,0 +1,15 @@
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.AssemblyInfoInputs.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.AssemblyInfo.cs
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.csproj.CoreCompileInputs.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.sourcelink.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/bin/Debug/net9.0/013-PersonPrj
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/bin/Debug/net9.0/013-PersonPrj.deps.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/bin/Debug/net9.0/013-PersonPrj.runtimeconfig.json
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/bin/Debug/net9.0/013-PersonPrj.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/bin/Debug/net9.0/013-PersonPrj.pdb
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/refint/013-PersonPrj.dll
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.pdb
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/013-PersonPrj.genruntimeconfig.cache
+/Users/adelinaa/Desktop/bootcamp-fullstack-csharp-js-sql/csharp/013-PersonPrj/obj/Debug/net9.0/ref/013-PersonPrj.dll
