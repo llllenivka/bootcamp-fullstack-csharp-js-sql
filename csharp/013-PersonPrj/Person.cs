@@ -1,7 +1,7 @@
 public class Person 
 {
-    public string Name { get; private set; }; 
-    public uint Age { get; private set; };
+    public string Name { get; private set; }
+    public uint Age { get; private set; }
 
     public Person(string name, uint age)
     {
