@@ -1,5 +1,7 @@
-public class Repository
+public class Repository : IRepository
 {
+
+
     private Person[] storage;
     private int count;
     private int index = 0;
@@ -28,11 +30,10 @@ public class Repository
         }
     }
 
-    public Person GetPersonById(int id) 
+    public Person GetById(int id) 
     {
         if(id < 0 || id >= index) return new NullPerson();
         else return storage[id];
     }
-
 
 }
