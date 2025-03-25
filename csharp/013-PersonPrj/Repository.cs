@@ -1,6 +1,6 @@
 public class Repository
 {
-    private Person[] people;
+    private Person[] storage;
     private int count;
     private int index = 0;
     public int Index => index;
@@ -8,26 +8,30 @@ public class Repository
     public Repository(int count)
     {
         this.count = count;
-        people = new Person[count];
+        storage = new Person[count];
     }
 
-    public void Append(Person person) 
-    { 
-        try 
+
+    public void Append(params Person[] people)
+    {
+        foreach(var person in people)
         {
-            people[index++] = person; 
-        }
-        catch(IndexOutOfRangeException)
-        {
-            index--;
-            Console.WriteLine($"Добавление '{person.Name}' отменено. База данных достигла максимального размера ({count} записей).");
+            try 
+            {
+                storage[index++] = person; 
+            }
+            catch(IndexOutOfRangeException)
+            {
+                index--;
+                Console.WriteLine($"Добавление '{person.Name}' отменено. База данных достигла максимального размера ({count} записей).");
+            }
         }
     }
 
     public Person GetPersonById(int id) 
     {
-        if(id < 0 || id >= index) return new Person("empty", -1);
-        else return people[id];
+        if(id < 0 || id >= index) return new NullPerson();
+        else return storage[id];
     }
 
 

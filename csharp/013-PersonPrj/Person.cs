@@ -1,4 +1,4 @@
-public class Person 
+public abstract class Person 
 {
     public string Name { get; private set; }
     public int Age { get; private set; }
@@ -8,4 +8,6 @@ public class Person
         Name = name;
         Age = age;
     }
+
+    public virtual string ToString() { return $"Имя: {Name} Возраст: {Age}"; }
 }
