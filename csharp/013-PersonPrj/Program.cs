@@ -7,4 +7,6 @@ for(int i = 0; i < 100; i++)
     repository.Append(person1);
 }
 
-repository.Print();
+Printer printer = new();
+
+printer.Print(repository);

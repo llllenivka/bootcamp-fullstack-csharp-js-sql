@@ -1,8 +1,9 @@
-class Repository
+public class Repository
 {
     private Person[] people;
     private int count;
     private int index = 0;
+    public int Index => index;
 
     public Repository(int count)
     {
@@ -23,13 +24,11 @@ class Repository
         }
     }
 
-    public void Print()
+    public Person GetPersonById(int id) 
     {
-        int idx = 1;
-        foreach(var person in people)
-        {
-            if(person == null) break;
-            Console.WriteLine($"{idx++}. Имя: {person.Name} Возраст: {person.Age}.");
-        }
+        if(id < 0 || id >= index) return new Person("empty", -1);
+        else return people[id];
     }
+
+
 }
