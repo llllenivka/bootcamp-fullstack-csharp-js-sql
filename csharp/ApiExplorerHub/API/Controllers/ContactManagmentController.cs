@@ -1,3 +1,4 @@
+using API.Dto;
 using API.Model;
 using API.Storage;
 using Microsoft.AspNetCore.Mvc;
@@ -14,22 +15,48 @@ public class ContactManagmentController : BaseController
     }
     
     [HttpPost("contacts")]
-    public void Create([FromBody]Contact contact)
+    public IActionResult Create([FromBody]Contact contact)
     {
-        _storage.Contacts.Add(contact);
+        bool res = _storage.Add(contact);
+        if (res) return Created();
+        return BadRequest();
     }
 
     [HttpGet("contacts")]
-    public List<Contact> Get()
+    public ActionResult<List<Contact>> Get()
     {
-        return _storage.Contacts;
+        return Ok(_storage.Get());
     }
 
-    [HttpDelete("contacts/{id}")]
-    public List<Contact> Delete(int id)
+    [HttpGet("contacts/{id}")]
+    public ActionResult<Contact> Get(int id)
     {
-        _storage.Contacts.RemoveAll(x => x.Id == id);
-        return _storage.Contacts;
+        if (id < 0)
+        {
+            return BadRequest(" Неверный формат ID ");
+        }
+        
+        var res = _storage.Get(id);
+        if (res == null) NotFound($"Контакт {id} не найден");
+        return Ok(res);
+
+    }
+    
+
+    [HttpDelete("contacts/{id}")]
+    public IActionResult Delete(int id)
+    {
+        bool res = _storage.Remove(id);
+        if (res) return Ok();
+        return BadRequest("Contact not found");
+    }
+
+    [HttpPut("contacts/{id}")]
+    public IActionResult Update(int id, [FromBody] ContactDto contactDto)
+    {
+        bool res = _storage.Update(id, contactDto);
+        if (res) return Ok();
+        return BadRequest();
     }
     
     

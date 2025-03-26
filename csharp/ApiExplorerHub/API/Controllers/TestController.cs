@@ -4,9 +4,9 @@ namespace API.Controllers;
 
 public class TestController : BaseController
 {
-    [HttpGet("test")]
-    public string GetHelloWorldText()
+    [HttpGet("testRequest")]
+    public ActionResult<string> GetHelloWorldText()
     {
-        return "Hello World!";
+        return BadRequest("Hello World");
     }
 }
