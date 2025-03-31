@@ -1,4 +1,32 @@
+import React, {useState} from "react";
+import TableContact from "./layout/TableContant/TableContant";
+import FormContact from "./layout/FormContact/FormContact";
+
 const App = () => {
+
+  const [contacts, setContacts] = useState(
+    [
+      {id:1, name:'Имя 1', email:'email1@mail.ru'},
+      {id:2, name:'Имя 2', email:'email2@mail.ru'},
+      {id:3, name:'Имя 3', email:'email3@mail.ru'},
+    ]
+  );
+
+
+  const addContact = (contactName, contactEmail) => {
+    const newId = contacts
+      .sort((x, y) => x.id - y.id)[contacts.length - 1]
+      .id + 1;
+    const item = {
+      id: newId, 
+      name: contactName, 
+      email:contactEmail
+    };
+
+    setContacts([...contacts, item]);
+  };
+
+
   return (
     <div className="container mt-5">
       <div className="card">
@@ -7,36 +35,9 @@ const App = () => {
         </div>
 
         <div className="card-body">
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Имя</th>
-                <th>E-mail</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <tr>
-                <th>1</th>
-                <th>Имя 3</th>
-                <th>example1@gmail.com</th>
-              </tr>
-
-              <tr>
-                <th>2</th>
-                <th>Имя 2</th>
-                <th>example2@gmail.com</th>
-              </tr>
-
-              <tr>
-                <th>3</th>
-                <th>Имя 1</th>
-                <th>example3@gmail.com</th>
-              </tr>
-
-            </tbody>
-          </table>
+          <TableContact contacts={contacts}/>  
+          <FormContact addContact={addContact}/>
+          
         </div>
       </div>
 
