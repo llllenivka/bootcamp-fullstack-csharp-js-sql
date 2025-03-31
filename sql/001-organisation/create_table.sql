@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS enployees (
+CREATE TABLE IF NOT EXISTS employees(
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     position TEXT,
@@ -6,11 +6,13 @@ CREATE TABLE IF NOT EXISTS enployees (
     email TEXT NOT NULL UNIQUE
 );
 
-CREATE TABLE IF NOT EXISTS employee_details (
+DROP TABLE employee_details;
+
+CREATE TABLE IF NOT EXISTS employee_details(
     id INTEGER PRIMARY KEY,
     employee_id INTEGER UNIQUE,
-    addres TEXT,
+    address TEXT,
     phone TEXT,
     age INTEGER CHECK(age >= 18),
-    FOREIGN KEY (employee_id) REFERENCES employees(id)
+    FOREIGN KEY(employee_id)REFERENCES employees(id)
 );
