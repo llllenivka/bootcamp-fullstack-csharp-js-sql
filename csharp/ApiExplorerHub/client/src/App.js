@@ -14,9 +14,13 @@ const App = () => {
 
 
   const addContact = (contactName, contactEmail) => {
-    const newId = contacts
+    const newId = contacts.length > 0 ? 
+    (
+      contacts
       .sort((x, y) => x.id - y.id)[contacts.length - 1]
-      .id + 1;
+      .id + 1
+    ) : 1;
+    
     const item = {
       id: newId, 
       name: contactName, 
