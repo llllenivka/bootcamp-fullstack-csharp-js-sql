@@ -14,7 +14,7 @@ const App = () => {
     axios.get(url).then(
       res => setContacts(res.data)
     );
-  }, [])
+  }, []);
 
 
   const addContact = (contactName, contactEmail) => {
@@ -32,7 +32,8 @@ const App = () => {
     };
 
     const url = `${baseApiUrl}/contacts`;
-    axios.post(url);
+    console.log(url);
+    axios.post(url, item);
 
     setContacts([...contacts, item]); 
   };
