@@ -14,4 +14,15 @@ public class SqlitePaginationEfStorage : SqliteEfStorage, IPaginationStorage
     {
         return base._context.Contacts.Find(id);
     }
+
+    public (List<Contact>, int TotalCount) GetContacts(int pageNumber, int pageSize)
+    {
+        int total = base._context.Contacts.Count();
+        List<Contact> contacts = base._context.Contacts
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+        
+        return (contacts, total);
+    }
 }

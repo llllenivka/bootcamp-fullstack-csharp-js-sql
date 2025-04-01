@@ -23,6 +23,28 @@ const ContactDetails = () => {
         )
     }, [id, navigate]);
 
+    const handleRemove = () => {
+        const url = `${baseApiUrl}/contacts/${id}`;
+
+        if(window.confirm("Удалить данный контакт?")) {
+            axios.delete(url).then(
+                navigate("/", { state: { refresh: true } })
+            ).catch(
+                console.log("Ошибка удаления")
+            );
+        }
+    }
+
+    const handleUpdate = () => {
+        const url = `${baseApiUrl}/contacts/${id}`;
+
+            axios.put(url, contact).then(
+                navigate("/", { state: { refresh: true } })
+            ).catch(
+                console.log("Ошибка удаления")
+            );
+        
+    }
 
     return (
         <div className="container mt-5">
@@ -34,7 +56,7 @@ const ContactDetails = () => {
                     className="form-control"
                     type="text"
                     value={contact.name}
-                    onChange={(e) => { }}
+                    onChange={(e) => { setContact({...contact, name:e.target.value})}}
                 />
             </div>
 
@@ -44,22 +66,22 @@ const ContactDetails = () => {
                     className="form-control"
                     type="email"
                     value={contact.email}
-                    onChange={(e) => { }}
+                    onChange={(e) => { setContact({...contact, email:e.target.value})}}
                 />
             </div>
 
             <button
-                className="btn btn-primary me-2" onClick={(e) => { }}>
+                className="btn btn-primary me-2" onClick={(e) => { handleUpdate()}}>
                 Обновить
             </button>
 
             <button
-                className="btn btn-danger me-2" onClick={(e) => { }}>
+                className="btn btn-danger me-2" onClick={(e) => { handleRemove()}}>
                 Удалить
             </button>
 
             <button
-                className="btn btn-secondary me-2" onClick={(e) => { }}>
+                className="btn btn-secondary me-2" onClick={(e) => { navigate("/");}}>
                 Назад
             </button>
 

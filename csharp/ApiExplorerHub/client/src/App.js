@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, {useState, useEffect} from "react";
 import TableContact from "./layout/TableContant/TableContant";
 import FormContact from "./layout/FormContact/FormContact";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import ContactDetails from './layout/ContactDetails/ContactDetails';
 
 const baseApiUrl = process.env.REACT_APP_API_URL;
@@ -10,13 +10,14 @@ const baseApiUrl = process.env.REACT_APP_API_URL;
 const App = () => {
 
   const [contacts, setContacts] = useState([]);
+  const location = useLocation();
 
-  const url = `${baseApiUrl}/contacts`;
   useEffect(() => {
+    const url = `${baseApiUrl}/contacts`;
     axios.get(url).then(
       res => setContacts(res.data)
     );
-  }, []);
+  }, [location.pathname]);
 
 
   const addContact = (contactName, contactEmail) => {
@@ -33,16 +34,6 @@ const App = () => {
     );
   };
 
-
-    
-
-  const deleteContact = (id) => {
-    const url = `${baseApiUrl}/contacts/${id}`;
-    axios.delete(url, id)
-    setContacts(contacts.filter(item => item.id !== id));
-  }
-
-
   return (
     <div className="container mt-5">
 
@@ -54,10 +45,7 @@ const App = () => {
             </div>
 
             <div className="card-body">
-              <TableContact 
-                contacts={contacts}
-                deleteContact={deleteContact}
-              />  
+              <TableContact contacts={contacts}/>  
               <FormContact addContact={addContact}/>
               
             </div>

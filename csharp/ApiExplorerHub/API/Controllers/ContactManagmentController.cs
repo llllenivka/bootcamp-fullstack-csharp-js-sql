@@ -49,6 +49,22 @@ public class ContactManagmentController : BaseController
         if (res) return Ok();
         return BadRequest();
     }
+    [HttpGet("contacts/page")]
+    public IActionResult GetContacts(int pageNumber = 1, int pageSize = 5)
+    {
+        var (contacts, total) = _storage.GetContacts(pageNumber, pageSize);
+        var response = new
+        {
+            Contacts = contacts,
+            TotalCount = total,
+            CurentPage = pageNumber,
+            PageSize = pageSize
+        };
+        
+        return Ok(response);
+
+    }
+    
     
     
     
