@@ -7,41 +7,26 @@ namespace API.Controllers;
 
 public class ContactManagmentController : BaseController
 {
-    private readonly ContactStorage _storage;
+    private readonly IStorage _storage;
     
-    public ContactManagmentController(ContactStorage contactStorage)
+    public ContactManagmentController(IStorage inMemoryStorage)
     {
-        this._storage = contactStorage;     
+        this._storage = inMemoryStorage;     
     }
     
-    [HttpPost("contacts")]
-    public IActionResult Create([FromBody]Contact contact)
-    {
-        bool res = _storage.Add(contact);
-        if (res) return Created();
-        return BadRequest();
-    }
-
     [HttpGet("contacts")]
     public ActionResult<List<Contact>> Get()
     {
         return Ok(_storage.Get());
     }
-
-    [HttpGet("contacts/{id}")]
-    public ActionResult<Contact> Get(int id)
-    {
-        if (id < 0)
-        {
-            return BadRequest(" Неверный формат ID ");
-        }
-        
-        var res = _storage.Get(id);
-        if (res == null) NotFound($"Контакт {id} не найден");
-        return Ok(res);
-
-    }
     
+    [HttpPost("contacts")]
+    public IActionResult Create([FromBody]Contact contact)
+    {
+        Contact res = _storage.Add(contact);
+        if (res != null) return Ok(contact);
+        return BadRequest();
+    }
 
     [HttpDelete("contacts/{id}")]
     public IActionResult Delete(int id)

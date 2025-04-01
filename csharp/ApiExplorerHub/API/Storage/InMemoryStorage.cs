@@ -3,11 +3,11 @@ using API.Model;
 
 namespace API.Storage;
 
-public class ContactStorage
+public class InMemoryStorage : IStorage
 {
     private List<Contact> Contacts { get; set; }
 
-    public ContactStorage()
+    public InMemoryStorage()
     {
         this.Contacts = new List<Contact>();
 
@@ -41,16 +41,16 @@ public class ContactStorage
     }
     
 
-    public bool Add(Contact contact)
+    public Contact Add(Contact contact)
     {
         foreach (var item in Contacts)
         {
             if(contact.Id == item.Id)
-                return false;
+                return null;
         }
 
         Contacts.Add(contact);
-        return true;
+        return contact;
     }
     
     public bool Remove(int id)
