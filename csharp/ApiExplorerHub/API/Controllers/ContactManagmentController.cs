@@ -7,9 +7,9 @@ namespace API.Controllers;
 
 public class ContactManagmentController : BaseController
 {
-    private readonly IStorage _storage;
+    private readonly IPaginationStorage _storage;
     
-    public ContactManagmentController(IStorage inMemoryStorage)
+    public ContactManagmentController(IPaginationStorage inMemoryStorage)
     {
         this._storage = inMemoryStorage;     
     }
@@ -18,6 +18,12 @@ public class ContactManagmentController : BaseController
     public ActionResult<List<Contact>> Get()
     {
         return Ok(_storage.Get());
+    }
+
+    [HttpGet("contacts/{id}")]
+    public ActionResult<Contact> Get(int id)
+    {
+        return Ok(_storage.GetById(id));
     }
     
     [HttpPost("contacts")]

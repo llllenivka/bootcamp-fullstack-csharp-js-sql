@@ -1,4 +1,7 @@
+using API.DataContext;
+using API.Seed;
 using API.Storage;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Extensions;
 
@@ -10,14 +13,19 @@ public static class ApplicationServiceCollectionExtension
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
         services.AddControllers();
+        
         var stringConnection = configuration.GetConnectionString("SqliteStringConnection");
-        services.AddSingleton<IStorage>(new SqliteStorage(stringConnection));
+        services.AddDbContext<SqliteDbContext>(opt => opt.UseSqlite(stringConnection));
+        
+        services.AddScoped<IPaginationStorage, SqlitePaginationEfStorage>();
+        services.AddScoped<IInitializer, SqliteEfFakerInitializer>();
+        
         services.AddCors(opt =>
             opt.AddPolicy("CorsPolicy", policy =>
                 {
                     policy.AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithOrigins(configuration["client"]); // dotnet run http://localhost:3000
+                        .WithOrigins(configuration["client"]);
                 }
             )
         );

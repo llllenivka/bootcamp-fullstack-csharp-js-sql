@@ -9,14 +9,8 @@ public static class ApplicationServiceProviderExtensions
     {
         using var scope = services.CreateScope();
         
-        var storage = scope.ServiceProvider.GetService<IStorage>();
-        var db = storage as SqliteStorage;
-
-        if (db != null)
-        {
-            string cs = configuration.GetConnectionString("SqliteStringConnection");
-            new FakerInitializer(cs).Initialize();
-        }
+        var initializer = scope.ServiceProvider.GetRequiredService<IInitializer>();
+        initializer.Initialize();
         
         return services;
     }
