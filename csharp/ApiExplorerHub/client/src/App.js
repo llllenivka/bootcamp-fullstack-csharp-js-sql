@@ -4,6 +4,7 @@ import TableContact from "./layout/TableContant/TableContant";
 import FormContact from "./layout/FormContact/FormContact";
 import { Routes, Route, useLocation } from 'react-router-dom';
 import ContactDetails from './layout/ContactDetails/ContactDetails';
+import Pagination from './layout/Pagination/Pagination';
 
 const baseApiUrl = process.env.REACT_APP_API_URL;
 
@@ -11,13 +12,23 @@ const App = () => {
 
   const [contacts, setContacts] = useState([]);
   const location = useLocation();
+  const [currentPage, setCurrenPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(0);
+  const [pageSize] = useState(10);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrenPage(pageNumber);
+  }
 
   useEffect(() => {
-    const url = `${baseApiUrl}/contacts`;
+    const url = `${baseApiUrl}/contacts/page?pageNumber=${currentPage}&pageSize=${pageSize}`;
     axios.get(url).then(
-      res => setContacts(res.data)
+      res => {
+        setContacts(res.data.contacts);
+        setTotalPages(Math.ceil(res.data.totalCount / pageSize));
+      } 
     );
-  }, [location.pathname]);
+  }, [currentPage, pageSize, location.pathname]);
 
 
   const addContact = (contactName, contactEmail) => {
@@ -27,10 +38,16 @@ const App = () => {
       email:contactEmail
     };
 
-    const url = `${baseApiUrl}/contacts`;
+    let url = `${baseApiUrl}/contacts`;
     console.log(url);
-    axios.post(url, item).then(
-      response => setContacts([...contacts, response.data])
+    axios.post(url, item);
+
+    url = `${baseApiUrl}/contacts/page?pageNumber=${currentPage}&pageSize=${pageSize}`;
+    axios.get(url).then(
+      res => {
+        setContacts(res.data.contacts);
+        setTotalPages(Math.ceil(res.data.totalCount / pageSize));
+      } 
     );
   };
 
@@ -46,6 +63,11 @@ const App = () => {
 
             <div className="card-body">
               <TableContact contacts={contacts}/>  
+              <Pagination 
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={ handlePageChange}
+              />
               <FormContact addContact={addContact}/>
               
             </div>

@@ -60,7 +60,7 @@ public class SqliteEfFakerInitializer : IInitializer
                 .RuleFor(c => c.Name, f => f.Name.FullName())
                 .RuleFor(c => c.Email, (f, c) => GenerateEmailForName(c.Name));
             
-            var contacts = faker.Generate(20);
+            var contacts = faker.Generate(250);
             
             _context.Contacts.AddRange(contacts);
             _context.SaveChanges();
