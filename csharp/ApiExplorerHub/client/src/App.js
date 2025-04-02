@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from "react";
 import TableContact from "./layout/TableContant/TableContant";
-import FormContact from "./layout/FormContact/FormContact";
-import { Routes, Route, useLocation } from 'react-router-dom';
+import AppendContact from './layout/FormContact/AppendContact';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import ContactDetails from './layout/ContactDetails/ContactDetails';
 import Pagination from './layout/Pagination/Pagination';
 
@@ -15,6 +15,11 @@ const App = () => {
   const [currentPage, setCurrenPage] = useState(1)
   const [totalPages, setTotalPages] = useState(0);
   const [pageSize] = useState(10);
+  const [updateTrigger, setUpdateTrigger] = useState(0);
+
+  const handleUpdateTrigger = () => {
+    setUpdateTrigger(updateTrigger + 1);
+  }
 
   const handlePageChange = (pageNumber) => {
     setCurrenPage(pageNumber);
@@ -31,25 +36,7 @@ const App = () => {
   }, [currentPage, pageSize, location.pathname]);
 
 
-  const addContact = (contactName, contactEmail) => {
-    
-    const item = {
-      name: contactName, 
-      email:contactEmail
-    };
 
-    let url = `${baseApiUrl}/contacts`;
-    console.log(url);
-    axios.post(url, item);
-
-    url = `${baseApiUrl}/contacts/page?pageNumber=${currentPage}&pageSize=${pageSize}`;
-    axios.get(url).then(
-      res => {
-        setContacts(res.data.contacts);
-        setTotalPages(Math.ceil(res.data.totalCount / pageSize));
-      } 
-    );
-  };
 
   return (
     <div className="container mt-5">
@@ -68,14 +55,19 @@ const App = () => {
                 totalPages={totalPages}
                 onPageChange={ handlePageChange}
               />
-              <FormContact addContact={addContact}/>
               
+              <Link to="/append"
+                className='btn btn-success mt-3'
+              >
+                Добавть контакт
+              </Link>
             </div>
           </div>
           } 
         />
         
-        <Route path='contact/:id' element={<ContactDetails />} ></Route>
+        <Route path='contact/:id' element={<ContactDetails onUpdate = {handleUpdateTrigger}/>} ></Route>
+        <Route path='append' element={<AppendContact />} ></Route>
       </Routes>
 
     </div>

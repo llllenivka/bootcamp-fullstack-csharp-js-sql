@@ -5,7 +5,7 @@ import axios from "axios";
 const baseApiUrl = process.env.REACT_APP_API_URL;
 
 
-const ContactDetails = () => {
+const ContactDetails = (props) => {
     const [contact, setContact] = useState({name:"", email:""});
     const {id} = useParams();
     const navigate = useNavigate();
@@ -27,8 +27,10 @@ const ContactDetails = () => {
         const url = `${baseApiUrl}/contacts/${id}`;
 
         if(window.confirm("Удалить данный контакт?")) {
-            axios.delete(url).then(
-                navigate("/", { state: { refresh: true } })
+            axios.delete(url).then( () => {
+                props.onUpdate();
+                navigate("/", { state: { refresh: true } });
+            }
             ).catch(
                 console.log("Ошибка удаления")
             );
@@ -38,8 +40,10 @@ const ContactDetails = () => {
     const handleUpdate = () => {
         const url = `${baseApiUrl}/contacts/${id}`;
 
-            axios.put(url, contact).then(
-                navigate("/", { state: { refresh: true } })
+            axios.put(url, contact).then( () => {
+                props.onUpdate();
+                navigate("/", { state: { refresh: true } });
+            }
             ).catch(
                 console.log("Ошибка удаления")
             );

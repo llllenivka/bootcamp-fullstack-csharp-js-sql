@@ -3,7 +3,6 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
     let startPage, endPage;
     const countPagination = 6;
     
-
     if(totalPages <= countPagination)
     {
         startPage = 1;
