@@ -9,6 +9,7 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
         startPage = 1;
         endPage = totalPages;
     } else {
+        
         if(currentPage<= countPagination - 4) {
             startPage = 1;
             endPage = countPagination;
@@ -16,7 +17,8 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
             startPage = totalPages - (countPagination - 1);
             endPage = totalPages;
         } else {
-            startPage = currentPage - (Math.floor(countPagination / 2));
+
+            startPage = currentPage - (Math.floor(countPagination / 2) - 1);
             endPage = currentPage + (Math.floor(countPagination / 2));
         }
     }
@@ -38,60 +40,62 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
                         Предыдущая
                     </button>
                 </li>
-            </ul>
+           
 
-            {startPage > 1 && (
-                <>
-                    <li className="page-link">
-                        <button
-                            className="page-link"
-                            onClick={() => { onPageChange(1); }}
-                        >
-                            1
-                        </button>
-                    </li>
-
-                    {startPage > 2 &&
-                        <li className="page-item disabled">
-                            <span className="page-link">...</span>
+                {startPage > 1 && (
+                    <>
+                        <li className="page-item">
+                            <button
+                                className="page-link"
+                                onClick={() => { onPageChange(1); }}
+                            >
+                                1
+                            </button>
                         </li>
-                    }
-                </>
-            )}
 
-            {pageNumber.map(pageIndex => (
-                <li key={pageIndex}
-                    className={`page-item ${currentPage === pageIndex ? "disabled" : ""}`}>
-                    <button
-                        className="page-link"
-                        onClick={() => {onPageChange(pageIndex); }}
+                        {startPage > 2 &&
+                            <li className="page-item disabled">
+                                <span className="page-link">...</span>
+                            </li>
+                        }
+                    </>
+                )}
+
+                
+                {pageNumber.map(pageIndex => (
+                    <li key={pageIndex}
+                        className={`page-item ${currentPage === pageIndex ? "disabled" : ""}`}
                     >
-                        {pageIndex}
-                    </button>
-                </li>
-            ))}
-
-            {endPage < totalPages && (
-                <>
-                    {endPage < totalPages - 1 &&
-                        <li className="page-item disabled">
-                            <span className="page-link">...</span>
-                        </li>
-                    }
-
-                    <li className="page-item">
                         <button
                             className="page-link"
-                            onClick={() => {onPageChange(totalPages);}}
+                            onClick={() => {onPageChange(pageIndex); }}
                         >
-                            {totalPages}
+                            {pageIndex}
                         </button>
                     </li>
-                </>
-            )}
+                ))}
+
+                {endPage < totalPages && (
+                    <>
+                        {endPage < totalPages - 1 &&
+                            <li className="page-item disabled">
+                                <span className="page-link">...</span>
+                            </li>
+                        }
+
+                        <li className="page-item">
+                            <button
+                                className="page-link"
+                                onClick={() => {onPageChange(totalPages);}}
+                            >
+                                {totalPages}
+                            </button>
+                        </li>
+                    </>
+                )}
 
 
-            <ul className="pagination">
+                
                 <li className={`page-item ${currentPage === totalPages ? "disable" : ""}`}>
                     <button
                         className="page-link"
@@ -101,6 +105,8 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
                         Следующая
                     </button>
                 </li>
+            
+
             </ul>
         </nav>
     )
